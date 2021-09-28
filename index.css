@@ -1,66 +1,258 @@
-body
-{
-background-color: #000000;
+body {
+  background-color: #000;
+  color: #FFF;
+  font: 16px Helvetica;
+  overflow-x: hidden; /*cursed*/
 }
 
-h1
-{
-color: #FFFFFF;
-font-family: times new roman;
-font-size: 220%;
-text-align: center;
+::selection {background-color: rgba(0, 0, 255, 0.25);}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
-h2
-{
-color: #4DFFFF;
-font-family: times new roman;
-font-size: 125%;
-text-align: center;
+.hard-noselect {pointer-events: none; /*cursed*/}
+
+.site-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
 }
 
-p
-{
-color: #3DCC66;
-font-family: calibri;
-font-size: 80%;
+.content-container {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 20rem;
 }
 
-button.s1
-{
-color: #696969;
-font-family: calibri;
-font-size: 100%;
-    
-width: 20%;
-margin-left: 40%;
-margin-right: 40%;
-/*margin-top: 25px;*/
-margin-bottom: 25px;
-    /*
-    check this xtendaflexibutton
-    soooo what the fuck is with these %s doggie
-    in case i fuck around too much and forget:
-    40% / 30% / 30%
-    is there another ratio that works?
-    20/40/40! is the same as 20/40/10?
-    */
+.content-header {
+  position: relative;
 }
 
-button.s2
-{
-color: #3D3D66;
-font-family: calibri;
-font-size: 100%;
-    
-width: 40%;
-margin-left: 30%;
-margin-right: 30%;
+.content-header h1 {
+  /*font-style|font-variant|font-weight|font-size|font-family*/
+  font: normal small-caps bold 2rem Helvetica;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  height: 3rem;
+  line-height: 2rem;
 }
 
-#m69
-{
-color: #aee420;
-font-family: calibri;
-font-size: 75%;    
+.braille {
+  letter-spacing: -0.125em;
+  transform: translate(0, -0.25rem);
+}
+
+.content-item {
+  position: relative;
+  color: #666;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.content-item h2 {font: normal small-caps bold 1.625rem Helvetica;}
+
+.content-item p:last-of-type{opacity: 90%;}
+
+.content-item-flex {
+  display: flex;
+  /*flex-direction: row | row-reverse | column | column-reverse;*/
+  /*flex-wrap: nowrap | wrap | wrap-reverse;*/
+  /*justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;*/
+  /*align-items: flex-start | flex-end | center | stretch | baseline;*/
+  /*align-content: flex-start | flex-end | center | stretch | space-between | space-around; */
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: center;
+}
+
+.flex-center {justify-content: center; align-items: center;}
+.flex-start {justify-content: flex-start;}
+
+.flexer {flex: 0 1 auto;}
+
+.mainnav {
+  position: relative;
+  background-color: rgba(0, 0, 51, 0.6);
+}
+
+.mainnav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: stretch;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-height: 2rem;
+  border-bottom: 1px solid #0000FF;
+  font: normal small-caps normal 0.75rem Helvetica;
+  text-transform: capitalize;
+}
+
+.mainnav li {
+  flex: 1 0 auto;
+  background-color: rgba(0, 0, 51, 0.5);
+  border-right: 1px solid #0000FF;
+  min-width: 15%;
+}
+
+.mainnav li > a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2rem;
+  height: 100%;
+}
+
+.mainnav li:last-of-type {border: none;}
+
+.mainnav li > a:link {color: #0000FF;}
+.mainnav li > a:visited {color: #0000FF;}
+.mainnav li > a:hover {color: #0080FF; background-color: rgba(0, 0, 0, 0.25);}
+.mainnav li > a:active {color: #FFF; background-color: rgba(0, 0, 0, 0.5);}
+
+#mobilehome {display: none;}
+
+#logo {
+  position: relative;
+  height: 2rem;
+  margin: -10px;
+}
+
+.navbutton {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  color: #0000FF;
+  background: none;
+  border: none;
+}
+
+.navbutton:hover {color: #0080FF; background-color: rgba(0, 0, 0, 0.25);}
+.navbutton:active {color: #FFF; background-color: rgba(0, 0, 0, 0.5);}
+
+ /*THIS CODE NEEDS HELP!!! HOW TO SET CHILD ABSOLUTE TO FULL ABSOLUTE VALUES?*/
+/*.navicon {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}*/
+
+@media all and (max-width: 640px) {
+  .mainnav ul {
+	border-bottom: none;
+  }
+  
+  .mainnav li {
+	height: 2rem;
+	background-color: rgba(0, 0, 51, 0.1);
+	border-right: none;
+	border-bottom: 1px solid rgba(0, 0, 255, 0.25);
+	width: 100%;
+  }
+  
+
+  .mainnav li:last-of-type {border-bottom: 1px solid rgba(0, 0, 255, 0.5);}
+  
+  .mobilenav {display: none;}
+  
+  #home {
+	flex: 1 0;
+	background-color: rgba(0, 0, 51, 0.5);
+	border-right: 1px solid #0000FF;
+	border-bottom: 1px solid #0000FF;
+  }
+  
+  #mobilehome {
+	flex: 6 0;
+	display: block;
+	background-color: rgba(0, 0, 51, 0.5);
+	border-bottom: 1px solid #0000FF;
+  }
+}
+
+.inverter:hover {
+  animation: flicker .5s ease-in infinite alternate;
+}
+
+.inverter:active {
+  animation: flicker .25s ease-in infinite alternate;
+  filter: invert(1);
+}
+
+.flicker:hover {
+  animation: flicker .75s ease-in infinite alternate;
+}
+
+.flicker:active {
+  animation: flicker .5s ease-in infinite alternate;
+}
+
+@keyframes flicker {
+  from {opacity: 100%;}
+  to {opacity: 75%;}
+}
+
+.color-test-1 {
+  background-color: #00FFFF;
+  background: linear-gradient(90deg, #FFFFFF 14.286%, #FFFF00 14.286%, #FFFF00 28.571%, #00FFFF 28.571%, #00FFFF 42.857%, #00FF00 42.857%, #00FF00 57.143%, #FF00FF 57.143%, #FF00FF 71.429%, #FF0000 71.429%, #FF0000 85.715%, #0000FF 85.715%);
+  height: 20vh;
+}
+
+.color-test-2 {
+  background-color: #00FF00;
+  background: linear-gradient(90deg, #0000FF 14.286%, #000000 14.286%, #000000 28.571%, #FF00FF 28.571%, #FF00FF 42.857%, #000000 42.857%, #000000 57.143%, #00FFFF 57.143%, #00FFFF 71.429%, #000000 71.429%, #000000 85.715%, #FFFFFF 85.715%);
+  height: 2.5vh;
+}
+
+.color-test-3 {
+  background-color: #FF00FF;
+  background: linear-gradient(90deg, #888 16.7%, #000 16.7%, #000 33.4%, #FFF 33.4%, #FFF 50%, #000 50%, #888 100%);
+  height: 5vh;
+}
+
+.quothoid-color-test-preox {
+  background-color: #00CCA3;
+  background: linear-gradient(90deg, #00CCA3 20%, #00A3A3 40%, #0066A3 60%, #003DA3 80%, #0000A3 100%);
+  height: 1em;
+}
+
+.doggis-color-test-preox {
+  background-color: #3DCCA3;
+  background: linear-gradient(90deg, #3DCCA3 20%, #3DA3A3 40%, #3D66A3 60%, #3D3DA3 80%, #3D00A3 100%);
+  height: 1em;
+}
+
+.quothoid-color-test {
+  background-color: #00CC66;
+  background: linear-gradient(90deg, #00CC66 20%, #00A366 40%, #006666 60%, #003D66 80%, #000066 100%);
+  height: 1em;
+}
+
+.doggis-color-test {
+  background-color: #3DCC66;
+  background: linear-gradient(90deg, #3DCC66 20%, #3DA366 40%, #3D6666 60%, #3D3D66 80%, #3D0066 100%);
+  height: 1em;
+}
+
+.unknown-color-test {
+  background-color: #4DFFFF;
+  background: linear-gradient(90deg, rgba(77, 255, 255, 1.0), rgba(77, 255, 255, 0));
+  height: 1em;
+}
+
+.color-bar {
+  height: 0.125em;
 }

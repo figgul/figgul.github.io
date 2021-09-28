@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>DSP figdex</title>
+  <meta charset='utf-8'>
+  <meta name='description' content='underground art!'>
+  <meta name='keywords' content='underground, art, figgul, DSP'>
+  <meta name='author' content='MNO'>
+  <meta name='viewport' content='width=device-width; initial-scale=1'>
+  <link rel='stylesheet' href='index.css'>
+</head>
+<body>
+  <div class="site-container">
+    <header class="noselect">
+      <nav class="mainnav">
+	    <ul>
+	      <li id="home"><a href="index.html"><img id="logo" src="dsp-icon.svg"></a></li>
+		  <li id="mobilehome"><button class="navbutton" onclick="navDisplay()"><div class="navicon">&#9776;</div></button></li>
+	  	  <li class="mobilenav"><a href="figgul.html">figgul</a></li>
+	  	  <li class="mobilenav"><a href="worlds.html">worlds</a></li>
+	  	  <li class="mobilenav"><a href="demos.html">demos</a></li>
+	  	  <li class="mobilenav"><a href="coordinates.html">geographic coordinates</a></li>
+	    </ul>
+	  </nav>
+	</header>
+	<main class="content-container">
+	  <header class="content-header">
+	    <h1 class="braille">&#x2880; &#x2832; &#x2822; &#x2852; &#x2862; &#x2854;</h1>
+		<div class="color-test-1 color-bar"></div>
+	  </header>
+	  <section class="content-item-flex flex-center">
+	  <div class="noselect"><img class="noselect hard-noselect" draggable="false" src="deathtest.gif" style="width:300px; height:225px"></div>
+	  </section>
+	  <section><p style="text-align:center;">outta demos!</p></section>
+	</main>
+  </div>
+  <script>
+    function navDisplay() {
+	  var x = document.getElementsByClassName("mobilenav");
+	  
+	  for (var i = 0; i < x.length; i++) {
+	    if (x[i].style.display === "block") {
+	      x[i].style.display = "none";
+	    }
+	    else {
+	      x[i].style.display = "block";
+	    }
+      }
+	}
+  </script>
+</body>
+</html>

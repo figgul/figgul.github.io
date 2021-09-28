@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>DSP figdex</title>
+  <meta charset='utf-8'>
+  <meta name='description' content='underground art!'>
+  <meta name='keywords' content='underground, art, figgul, DSP'>
+  <meta name='author' content='MNO'>
+  <meta name='viewport' content='width=device-width; initial-scale=1'>
+  <link rel='stylesheet' href='index.css'>
+</head>
+<body>
+  <div class="site-container">
+    <header class="noselect">
+      <nav class="mainnav">
+	    <ul>
+	      <li id="home"><a href="index.html"><img id="logo" src="dsp-icon.svg"></a></li>
+		  <li id="mobilehome"><button class="navbutton" onclick="navDisplay()"><div class="navicon">&#9776;</div></button></li>
+	  	  <li class="mobilenav"><a href="figgul.html">figgul</a></li>
+	  	  <li class="mobilenav"><a href="worlds.html">worlds</a></li>
+	  	  <li class="mobilenav"><a href="demos.html">demos</a></li>
+	  	  <li class="mobilenav"><a href="coordinates.html">geographic coordinates</a></li>
+	    </ul>
+	  </nav>
+	</header>
+	<main class="content-container">
+	  <header class="content-header">
+	    <h1 class="braille">&#x2880; &#x28B0; &#x28B4; &#x2854;</h1>
+		<div class="color-test-1 color-bar"></div>
+	  </header>
+	  <section class="content-item">
+        <p>15. When it comes to content, at times the other side certainly makes it easy for itself to have a vast breadth of such content at its disposal. It pulls quite a lot of material into its own domain, namely, what is already familiar and well-ordered, and by principally trafficking in rare items and curiosities, it manages to put on the appearance of being in full possession of what knowledge had already finished with</p>
+        <p>15. In Ansehung des Inhalts machen die andern sich es wohl zuweilen leicht genug, eine große Ausdehnung zu haben. Sie ziehen auf ihren Boden eine Menge Material, nämlich das schon Bekannte und Geordnete, herein, und indem sie sich vornehmlich mit den Sonderbarkeiten und Kuriositäten zu tun machen, scheinen sie um so mehr das übrige, womit das Wissen in seiner Art schon fertig war, zu besitzen,</p>
+	  </section>
+	</main>
+  </div>
+  <script>
+    function navDisplay() {
+	  var x = document.getElementsByClassName("mobilenav");
+	  
+	  for (var i = 0; i < x.length; i++) {
+	    if (x[i].style.display === "block") {
+	      x[i].style.display = "none";
+	    }
+	    else {
+	      x[i].style.display = "block";
+	    }
+      }
+	}
+  </script>
+</body>
+</html>

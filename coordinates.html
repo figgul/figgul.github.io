@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>DSP figdex</title>
+  <meta charset='utf-8'>
+  <meta name='description' content='underground art!'>
+  <meta name='keywords' content='underground, art, figgul, DSP'>
+  <meta name='author' content='MNO'>
+  <meta name='viewport' content='width=device-width; initial-scale=1'>
+  <link rel='stylesheet' href='index.css'>
+</head>
+<body>
+  <div class="site-container">
+    <header class="noselect">
+      <nav class="mainnav">
+	    <ul>
+	      <li id="home"><a href="index.html"><img id="logo" src="dsp-icon.svg"></a></li>
+		  <li id="mobilehome"><button class="navbutton" onclick="navDisplay()"><div class="navicon">&#9776;</div></button></li>
+	  	  <li class="mobilenav"><a href="figgul.html">figgul</a></li>
+	  	  <li class="mobilenav"><a href="worlds.html">worlds</a></li>
+	  	  <li class="mobilenav"><a href="demos.html">demos</a></li>
+	  	  <li class="mobilenav"><a href="coordinates.html">geographic coordinates</a></li>
+	    </ul>
+	  </nav>
+	</header>
+	<main class="content-container">
+	  <header class="content-header">
+	    <h1 class="braille">&#x2880; &#x2812; &#x2862; &#x2862; &#x2866; &#x2832; &#x2860; &#x2802; &#x2874; &#x2822; &#x2854;</h1>
+		<div class="color-test-1 color-bar"></div>
+	  </header>
+	  <section class="content-item">
+	  <h2>find earth secrets!</h2>
+	  <p>bring a shovel!</p>
+	  <code>43&deg;39&prime;22.4928&Prime; N  123&deg;19&prime;51.1248&Prime; W</code>
+	  <p>que vista!</p>
+	  <code>-20&deg;23&prime;15.0&Prime; S  -43&deg;32&prime;00.0&Prime; W</code>
+	  </section>
+	</main>
+  </div>
+  <script>
+    function navDisplay() {
+	  var x = document.getElementsByClassName("mobilenav");
+	  
+	  for (var i = 0; i < x.length; i++) {
+	    if (x[i].style.display === "block") {
+	      x[i].style.display = "none";
+	    }
+	    else {
+	      x[i].style.display = "block";
+	    }
+      }
+	}
+  </script>
+</body>
+</html>
