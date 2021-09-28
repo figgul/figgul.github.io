@@ -17,52 +17,22 @@ body {
   user-select: none;
 }
 
-.hard-noselect {pointer-events: none; /*cursed*/}
+.hard-noselect {pointer-events: none;} /*cursed*/
 
 .site-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
+  height: 100vh;
 }
 
-.content-container {
+.mainnav {
   position: relative;
-  margin: 0 auto;
-  width: 50%;
-  min-width: 20rem;
+  background-color: rgba(0, 0, 51, 0.6);
 }
 
-.content-header {
-  position: relative;
-}
-
-.content-header h1 {
-  /*font-style|font-variant|font-weight|font-size|font-family*/
-  font: normal small-caps bold 2rem Helvetica;
-  text-align: center;
-  margin: 1.5rem 0 0;
-  height: 3rem;
-  line-height: 2rem;
-}
-
-.braille {
-  letter-spacing: -0.125em;
-  transform: translate(0, -0.25rem);
-}
-
-.content-item {
-  position: relative;
-  color: #666;
-  text-align: justify;
-  text-align-last: center;
-}
-
-.content-item h2 {font: normal small-caps bold 1.625rem Helvetica;}
-
-.content-item p:last-of-type{opacity: 90%;}
-
-.content-item-flex {
+.mainnav ul {
   display: flex;
   /*flex-direction: row | row-reverse | column | column-reverse;*/
   /*flex-wrap: nowrap | wrap | wrap-reverse;*/
@@ -72,30 +42,13 @@ body {
   flex-flow: row wrap;
   justify-content: flex-end;
   align-items: stretch;
-  align-content: center;
-}
-
-.flex-center {justify-content: center; align-items: center;}
-.flex-start {justify-content: flex-start;}
-
-.flexer {flex: 0 1 auto;}
-
-.mainnav {
-  position: relative;
-  background-color: rgba(0, 0, 51, 0.6);
-}
-
-.mainnav ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: stretch;
   align-content: stretch;
   list-style-type: none;
   margin: 0;
   padding: 0;
   min-height: 2rem;
   border-bottom: 1px solid #0000FF;
+  /*font: font-style|font-variant|font-weight|font-size|font-family*/
   font: normal small-caps normal 0.75rem Helvetica;
   text-transform: capitalize;
 }
@@ -143,17 +96,63 @@ body {
 .navbutton:hover {color: #0080FF; background-color: rgba(0, 0, 0, 0.25);}
 .navbutton:active {color: #FFF; background-color: rgba(0, 0, 0, 0.5);}
 
- /*THIS CODE NEEDS HELP!!! HOW TO SET CHILD ABSOLUTE TO FULL ABSOLUTE VALUES?*/
+/*THIS CODE NEEDS HELP!!! HOW TO SET CHILD ABSOLUTE TO FULL ABSOLUTE VALUES? JS?*/
 /*.navicon {
   position: absolute;
   top: 20%;
   left: 40%;
 }*/
 
+.content-container {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 20rem;
+}
+
+.content-header {position: relative;}
+
+.content-header h1 {
+  font: normal small-caps bold 2rem Helvetica;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  height: 3rem;
+  line-height: 2rem;
+}
+
+.braille {
+  letter-spacing: -0.125em;
+  transform: translate(0, -0.25rem);
+}
+
+.content-item {
+  position: relative;
+  color: #666;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.content-item h2 {font: normal small-caps bold 1.625rem Helvetica;}
+
+.content-item p:last-of-type {opacity: 90%;}
+
+.content-item hr {opacity: 10%;}
+
+.content-item-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: center;
+}
+
+.flex-center {justify-content: center; align-items: center;}
+.flex-start {justify-content: flex-start;}
+
+/*.flexer {flex: 0 1 auto;}*/ /*cursed*/
+
 @media all and (max-width: 640px) {
-  .mainnav ul {
-	border-bottom: none;
-  }
+  .mainnav ul {border-bottom: none;}
   
   .mainnav li {
 	height: 2rem;
@@ -163,7 +162,6 @@ body {
 	width: 100%;
   }
   
-
   .mainnav li:last-of-type {border-bottom: 1px solid rgba(0, 0, 255, 0.5);}
   
   .mobilenav {display: none;}
@@ -183,22 +181,14 @@ body {
   }
 }
 
-.inverter:hover {
-  animation: flicker .5s ease-in infinite alternate;
-}
+.inverter:hover {animation: flicker .5s ease-in infinite alternate;}
+.inverter:active {animation: flicker .25s ease-in infinite alternate; filter: invert(1);}
 
-.inverter:active {
-  animation: flicker .25s ease-in infinite alternate;
-  filter: invert(1);
-}
+.flicker:hover {animation: flicker .75s ease-in infinite alternate;}
+.flicker:active {animation: flicker .5s ease-in infinite alternate;}
 
-.flicker:hover {
-  animation: flicker .75s ease-in infinite alternate;
-}
-
-.flicker:active {
-  animation: flicker .5s ease-in infinite alternate;
-}
+.planet-flicker-1 {animation: flicker 3s ease-in infinite alternate;}
+.planet-flicker-2 {animation: flicker 2s ease-in 0.5s infinite alternate;}
 
 @keyframes flicker {
   from {opacity: 100%;}
@@ -253,6 +243,4 @@ body {
   height: 1em;
 }
 
-.color-bar {
-  height: 0.125em;
-}
+.color-bar {height: 0.125em;}
